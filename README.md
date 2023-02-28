@@ -134,4 +134,4 @@ Once you have installed the dependencies, you are ready to run the app with ```n
 ```
 ## 👩‍💻 Author
 
-This App has been developed by .[**Yara Paz**].(https://github.com/yarapaz).
+This App has been developed by Yara Paz.
