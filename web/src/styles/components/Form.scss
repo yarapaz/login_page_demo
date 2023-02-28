@@ -1,16 +1,24 @@
 .form {
-  width: 400px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   margin-top: 50px;
+  position: relative;
+  @include tablet {
+    gap: 40px;
+    width: 300px;
+  }
   &__username_input,
   &__password_input {
     width: 200px;
     border: none;
     border-bottom: 2px solid rgba(128, 128, 128, 0.7);
+    @include tablet {
+      width: 280px;
+    }
   }
   &__error_message {
     border: 2px solid red;

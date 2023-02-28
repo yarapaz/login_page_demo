@@ -4,7 +4,7 @@ import Github from '../socialLogin/Github';
 
 function SocialLogin() {
   return (
-    <section>
+    <section className='socialLogin'>
       <Google />
       <Microsoft />
       <Github />
