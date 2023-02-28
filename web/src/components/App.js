@@ -6,7 +6,30 @@ import Main from './Main';
 import LoginPage from './LoginPage';
 import callToApi from '../services/api';
 import router from '../services/router';
-import { LoginSocialMicrosoft } from 'reactjs-social-login';
+import SuperTokens from 'supertokens-auth-react';
+import ThirdPartyEmailPassword, {
+  Github,
+  Google,
+  Microsoft,
+} from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
+import Session from 'supertokens-auth-react/recipe/session';
+
+// SuperTokens init
+SuperTokens.init({
+  appInfo: {
+    appName: 'Management Center',
+    apiDomain: 'http://localhost:4000',
+    websiteDomain: 'http://localhost:3000',
+  },
+  recipeList: [
+    ThirdPartyEmailPassword.init({
+      signInAndUpFeature: {
+        providers: [Github.init(), Google.init(), Microsoft.init()],
+      },
+    }),
+    Session.init(),
+  ],
+});
 
 function App() {
   //States

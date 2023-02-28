@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "react-social-login-buttons": "^3.6.1",
     "reactjs-social-login": "^2.6.2",
+    "supertokens-auth-react": "^0.31.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
