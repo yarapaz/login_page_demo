@@ -16,11 +16,26 @@
     width: 200px;
     border: none;
     border-bottom: 2px solid rgba(128, 128, 128, 0.7);
+    padding-bottom: 10px;
     @include tablet {
       width: 280px;
+      padding-bottom: 16px;
     }
   }
   &__error_message {
     border: 2px solid red;
+  }
+}
+
+.fa-eye,
+.fa-eye-slash {
+  position: absolute;
+  left: 78%;
+  bottom: 66%;
+  font-size: rem(14);
+  @include tablet {
+    left: 90%;
+    bottom: 66%;
+    font-size: rem(14);
   }
 }
