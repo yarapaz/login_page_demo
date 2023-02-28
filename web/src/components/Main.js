@@ -14,6 +14,11 @@ function Main(props) {
         emptyPasswordMessage={props.emptyPasswordMessage}
         userNotFound={props.userNotFound}
         sendLoginToApi={props.sendLoginToApi}
+        buttonType={props.buttonType}
+        buttonText={props.buttonText}
+        emptyFieldsMessage={props.emptyFieldsMessage}
+        firstInputInfo={props.firstInputInfo}
+        secondInputInfo={props.secondInputInfo}
       />
       <SocialLogin />
     </main>

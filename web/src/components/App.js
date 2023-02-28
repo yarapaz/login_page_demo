@@ -1,35 +1,57 @@
 import '../styles/App.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Header';
+import Header from '../templates/Header';
 import Main from './Main';
 import LoginPage from './LoginPage';
 import callToApi from '../services/api';
 import router from '../services/router';
-import SuperTokens from 'supertokens-auth-react';
-import ThirdPartyEmailPassword, {
-  Github,
-  Google,
-  Microsoft,
-} from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
-import Session from 'supertokens-auth-react/recipe/session';
+// import SuperTokens from 'supertokens-auth-react';
+// import ThirdPartyEmailPassword, {
+//   Github,
+//   Google,
+// } from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
+// import Session from 'supertokens-auth-react/recipe/session';
 
-// SuperTokens init
-SuperTokens.init({
-  appInfo: {
-    appName: 'Management Center',
-    apiDomain: 'http://localhost:4000',
-    websiteDomain: 'http://localhost:3000',
-  },
-  recipeList: [
-    ThirdPartyEmailPassword.init({
-      signInAndUpFeature: {
-        providers: [Github.init(), Google.init(), Microsoft.init()],
-      },
-    }),
-    Session.init(),
-  ],
-});
+// // SuperTokens init
+// SuperTokens.init({
+//   appInfo: {
+//     appName: 'Management Center',
+//     apiDomain: 'http://localhost:4000',
+//     websiteDomain: 'http://localhost:3000',
+//   },
+//   recipeList: [
+//     ThirdPartyEmailPassword.init({
+//       signInAndUpFeature: {
+//         providers: [
+//           Github.init(),
+//           Google.init(),
+//           [
+//             {
+//               id: 'Microsoft',
+//               name: 'Microsoft',
+//               buttonComponent: (
+//                 <div
+//                   style={{
+//                     cursor: 'pointer',
+//                     border: '1',
+//                     paddingTop: '5px',
+//                     paddingBottom: '5px',
+//                     borderRadius: '5px',
+//                     borderStyle: 'solid',
+//                   }}
+//                 >
+//                   Login with Microsoft
+//                 </div>
+//               ),
+//             },
+//           ],
+//         ],
+//       },
+//     }),
+//     Session.init(),
+//   ],
+// });
 
 function App() {
   //States
@@ -43,6 +65,11 @@ function App() {
     user: username,
     pass: password,
   });
+  const buttonType = 'submit';
+  const buttonText = 'Submit';
+  const emptyFieldsMessage = 'Empty fields';
+  const firstInputInfo = 'username';
+  const secondInputInfo = 'password';
 
   //Functions
   const showPassword = () => {
@@ -107,6 +134,11 @@ function App() {
                 emptyPasswordMessage={emptyPasswordMessage}
                 userNotFound={userNotFound}
                 sendLoginToApi={sendLoginToApi}
+                buttonType={buttonType}
+                buttonText={buttonText}
+                emptyFieldsMessage={emptyFieldsMessage}
+                firstInputInfo={firstInputInfo}
+                secondInputInfo={secondInputInfo}
               />
             </>
           }

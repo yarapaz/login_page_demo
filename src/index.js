@@ -13,6 +13,8 @@ app.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+app.set('view engine', 'ejs');
+
 app.post('/users', (req, res) => {
   const userLogin = req.body;
 
