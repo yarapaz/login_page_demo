@@ -132,6 +132,10 @@ Once you have installed the dependencies, you are ready to run the app with ```n
 > 👉 Open http://localhost:3000 to view in the browser
 
 ```
+## Pending Functionalities
+
+I still have to work on the Social Login Buttons to work. Coming soon!
+
 ## 👩‍💻 Author
 
 This App has been developed by Yara Paz.
