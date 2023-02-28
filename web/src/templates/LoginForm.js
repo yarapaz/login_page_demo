@@ -16,13 +16,14 @@ function LoginForm(props) {
         required
         onChange={props.handleInputs}
         placeholder={`${props.firstInputInfo}`}
+        pattern='^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$'
       />
       <ErrorMessage
         errorControl={props.emptyUsernameMessage}
         errorMessage={props.emptyFieldsMessage}
       ></ErrorMessage>
       <label htmlFor={`${props.secondInputInfo}`} hidden>
-        Password
+        {props.secondInputInfo}
       </label>
       <input
         className={`form__${props.secondInputInfo}_input`}
@@ -32,6 +33,7 @@ function LoginForm(props) {
         required
         onChange={props.handleInputs}
         placeholder={`${props.secondInputInfo}`}
+        pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"'
       />
       <ErrorMessage
         errorControl={props.emptyPasswordMessage}
